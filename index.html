@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Password Generator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body class="midAlign">
+
+        <h1>Password Generator</h1>
+        <fieldset class="midAlign coolBorder">
+            <label class="form-control" for="words">
+                <input type="checkbox" id="words" checked>Words<br>
+            </label>
+            <label class="form-control" for="uppercase">
+                <input type="checkbox" id="uppercase">Uppercase<br>
+            </label>
+            <label class="form-control" for="digits">
+                <input type="checkbox" id="digits">Digits<br>
+            </label>
+            <label class="form-control" for="symbols">
+                <input type="checkbox" id="symbols">Symbols<br>
+            </label>
+            <label class="form-control" for="length">
+                <input type="number" id="length" value="4" max="64" min="2"
+                    onkeydown="
+                    if (event.keyCode==13) {
+                        document.getElementById('generate').click()}">
+                    Length
+            </label>
+            <br>
+            <button class="button" type="button" id="generate" 
+                onclick="
+                runPasswordGenerator(
+                    inputs[4].value,inputs[0].checked,
+                    inputs[1].checked, inputs[2].checked,
+                    inputs[3].checked);">
+                Generate!
+            </button>
+        </fieldset>
+        <ul id="errorOutput" class="midAlign"></ul>
+
+        <ul id="output" class="midAlign">
+        </ul>
+
+        <script src="index.js"></script>
+    </body>
+</html>

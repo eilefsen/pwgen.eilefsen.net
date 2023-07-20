@@ -1,0 +1,239 @@
+/* @font-face { */
+/*     font-family: futura */
+/*     src: url(Futura.ttc); */
+/* } */
+
+:root {
+    font-family: futura;
+    /* font-size: 2vw; */
+    font-size: clamp(100%, 6px + 2vw, 24px);
+    --fg-color:             #ebdbb2;
+    --fg0-color:            #fbf1c7;
+    --fg0_h-color:          #f9f5d7;
+    --fg_dark-color:        #3c3836;
+    --bg0-color:            #282828;
+    --bg0_h-color:          #1d2021;
+    --yellow-color:         #d79921;
+    --light-yellow-color:   #fabd2f;
+    --red-color:            #cc241d;
+    --light-red-color:      #fb4934;
+    --blue-color:           #076678;
+    --light-blue-color:     #458588;
+    --green-color:          #98971a;
+    --light-green-color:    #b8bb26;
+    --aqua-color:           #689d6a;
+    --gray-color:           #504945;
+
+
+    --foreground-color: var(--fg_dark-color);
+    color: var(--bg0-color);
+    --background-color: var(--fg0_h-color);
+    background-color: var(--bg0_h-color);
+}
+h1 {
+    color: var(--background-color);
+    font-size: 4rem;
+    font-weight: normal;
+    margin: 2rem;
+
+}
+fieldset {
+    background-color: var(--background-color);
+    padding: 1em;
+    width: 14em;
+    border: 1px solid;
+    box-shadow: inset 0px 0px 0px 0.5em var(--bg0-color);
+    box-sizing: border-box;
+}
+.coolBorder {
+    border-image: linear-gradient(to right,
+                var(--light-green-color) 25%,
+                var(--light-red-color) 25%,
+                var(--light-red-color) 50%,
+                var(--light-yellow-color) 50%,
+                var(--light-yellow-color) 75%,
+                var(--light-blue-color) 75%) 5 / 0.5em / 0.1em;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+ul#output {
+    color: var(--fg0_h-color);
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-top: 1em;
+}
+li {
+    white-space: no-wrap;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+#errorOutput {
+    margin-top: 0.5em;
+    color: var(--light-red-color);
+    font-weight: bold;
+}
+
+.midAlign {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.form-control {
+    margin-top: 0.2em;
+    font-size: 2rem;
+    font-weight: medium;
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+}
+button.button { /*reset*/
+    appearance: none;
+    box-sizing: border-box;
+    background-color: transparent;
+    font-family: inherit;
+    padding: 0;
+    cursor: pointer;
+
+    @media screen and (-ms-high-contrast: active) {
+        border: 2px solid currentcolor;
+    }
+}
+button.button {
+    display: inline-flex;
+    align-items: center;
+    align-self: start;
+    justify-content: center;
+
+    background-color: var(--gray-color);
+    color: var(--fg0_h-color);
+    box-shadow: 0 0em 0.2em var(--bg0-color);
+    text-align: center;
+    line-height: 1.1;
+    height: 2.3em;
+    padding: 0.25em 0.75em;
+    min-width: 10ch;
+    min-height: 44px;
+    border: 0.20em solid var(--bg0_h-color);
+    border-radius: 0.10em;
+}
+button {
+    font-size: 1.2em;
+    width: auto;
+    transform: translateY(-0.3em);
+}
+button:hover {
+    transition: 100ms all ease-in;
+    background-color: var(--fg_dark-color);
+}
+button:active {
+    transition: 5ms all ease-in;
+    transition: 30ms all ease-out;
+    background-color: var(--bg0_h-color);
+}
+input[type="number"] {
+    appearance: none;
+    width: 2.3em;
+    height: 2em;
+    background-color: var(--background-color);
+    margin: 0;
+    box-sizing: border-box;
+    font: inherit;
+    font-size: 50%;
+    text-align: center;
+    padding: 0.1em 0 0 0;
+
+    color: currentColor;
+    border: 0.20em solid var(--bg0_h-color);
+    border-radius: 0.10em;
+    transform: translateY(0.15em);
+}
+input#length:focus {
+    background-color: var(--fg_dark-color); 
+    outline: 0;
+}
+/* hide arrows in number input dialog */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+/* END hide arrows */
+input[type="checkbox"] {
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.10em solid currentColor;
+    border-radius: 0.05em;
+
+    display: grid;
+    place-content: center;
+}
+label[for="length"] {
+    transform: translateY(-0.05em);
+}
+label[for="words"] {
+    transform: translateY(0.05em);
+}
+input#words {
+    transform: translateY(-0.05em);
+    background-color: var(--light-green-color);
+}
+input#words:hover {
+    background-color: var(--green-color);
+}
+input#uppercase {
+    background-color: var(--light-red-color);
+}
+input#uppercase:hover {
+    background-color: var(--red-color);
+}
+input#digits {
+    background-color: var(--light-yellow-color);
+}
+input#digits:hover {
+    background-color: var(--yellow-color);
+}
+input#symbols {
+    background-color: var(--light-blue-color);
+}
+input#symbols:hover {
+    background-color: var(--blue-color);
+}
+input#length {
+    background-color: var(--gray-color);
+    color: var(--background-color);
+}
+
+/* Prepare checkmark for when box is checked*/
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.75em;
+    height: 0.75em;
+    transform: scale(0);
+    transition: 60ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--background-color);
+    background-color: CanvasText;
+
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+/* When Checked make checkmark visible*/
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+label {
+    text-align: left;
+}
